@@ -5,4 +5,6 @@ This kata is designed to help you learn test-first coding and refactoring. To th
 
 # Steps
 
-# Commit 1 - Accept a string of 0, 1 or 2 numbers. Produce an exception if more than 2 numbers. Return the sum of the numbers or 0 for empty string.
+# Commit 1 - Accept a string of 0, 1 or 2 numbers. Produce an exception if more than 2 numbers. Return the sum of the numbers, or return 0 for empty string.
+
+# Commit 2 - Amend to allow an unknown number of numbers in the input string.

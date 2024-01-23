@@ -22,11 +22,6 @@ public class StringCalculatorTest {
 		StringCalculator.add("1,2");
 	}
 	
-	@Test(expected = RuntimeException.class)
-	public final void whenMoreThan2NumbersAreUsedThenExceptionIsThrown() {
-		StringCalculator.add("1,2,3");
-	}	
-	
 	@Test
 	public final void whenOneNumberIsUsedThenReturnValueIsThatSameNumber() {
 		Assert.assertEquals(3, StringCalculator.add("3"));
@@ -35,6 +30,11 @@ public class StringCalculatorTest {
 	@Test
 	public final void whenTwoNumbersAreUsedThenReturnValueIsTheirSum() {
 		Assert.assertEquals(3+6, StringCalculator.add("3,6"));
+	}
+	
+	@Test
+	public final void whenAnyNumberOfNumbersIsUsedThenReturnValueIsTheirSum() {
+		Assert.assertEquals(2+4+8+16+32, StringCalculator.add("2,4,8,16,32"));
 	}
 
 }
