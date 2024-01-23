@@ -63,5 +63,15 @@ public class StringCalculatorTest {
 		Assert.assertNotNull(exception);
 		Assert.assertEquals("Negatives not allowed: [-6, -18]", exception.getMessage());
 	}
+	
+	@Test
+	public final void whenOneOrMoreNumbersEquals1000IsUsedThenIncludedInSum() {
+		Assert.assertEquals(1002, StringCalculator.add("1000,2")); //test the edge of the boundary
+	}
+	
+	@Test
+	public final void whenOneOrMoreNumbersAreGreaterThan1000IsUsedThenItIsNotIncludedInSum() {
+		Assert.assertEquals(2, StringCalculator.add("1001,2")); //test greater than the boundary
+	}
 
 }

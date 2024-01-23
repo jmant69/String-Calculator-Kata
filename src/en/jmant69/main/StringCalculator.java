@@ -11,11 +11,11 @@ public class StringCalculator {
 		if (numbers.startsWith("//")) {
 			int delimiterIndex = numbers.indexOf("//") + 2;
 			delimiter = numbers.substring(delimiterIndex, delimiterIndex + 1);
-			numbersWithoutDelimiter = numbers.substring(numbers.indexOf("\n") + 1);	
+			numbersWithoutDelimiter = numbers.substring(numbers.indexOf("\n") + 1);
 		}
 		return add(numbersWithoutDelimiter, delimiter);
 	}
-	
+
 	private static int add(final String numbers, final String delimiter) {
 		int sumOfNumbers = 0;
 		String[] numbersArray = numbers.split(delimiter);
@@ -25,14 +25,15 @@ public class StringCalculator {
 				int numberInt = Integer.parseInt(number);
 				if (numberInt < 0) {
 					negativeNumbers.add(numberInt);
+				} else if (numberInt <= 1000) {
+					sumOfNumbers += numberInt;
 				}
-				sumOfNumbers += numberInt;
 			}
 		}
 		if (negativeNumbers.size() > 0) {
 			throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
 		}
-		return sumOfNumbers;		
+		return sumOfNumbers;
 	}
 
 }
