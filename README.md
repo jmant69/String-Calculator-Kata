@@ -22,3 +22,5 @@ This kata is designed to help you learn test-first coding and refactoring. To th
 # Commit 8 - Delimiters can be any length
 
 # Commit 9 - Fix to the syntax of the delimiter in the previous commit
+
+# Commit 10 - Allow multiple delimiters

@@ -10,10 +10,10 @@ public class StringCalculator {
 		String numbersWithoutDelimiter = numbers;
 		if (numbers.startsWith("//")) {
 			int delimiterIndex = numbers.indexOf("[");
-			int delimiterEndIndex = numbers.indexOf("]") + 1;
+			int delimiterEndIndex = numbers.indexOf("\n");
 			delimiter = numbers.substring(delimiterIndex, delimiterEndIndex);
-			int indexOfN = numbers.indexOf("\n");
-			numbersWithoutDelimiter = numbers.substring(indexOfN + 1);
+			delimiter = delimiter.replace("][", "");
+			numbersWithoutDelimiter = numbers.substring(delimiterEndIndex + 1);
 		}
 		return add(numbersWithoutDelimiter, delimiter);
 	}
