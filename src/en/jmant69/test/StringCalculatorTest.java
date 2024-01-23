@@ -44,7 +44,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public final void whenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers() {
-		Assert.assertEquals(14, StringCalculator.add("//[;]\\n2;4;8")); // Amended to new syntax
+		Assert.assertEquals(14, StringCalculator.add("//[;]\n2;4;8")); // Amended to new syntax
 	}
 	
 	@Test(expected = RuntimeException.class)
@@ -76,7 +76,7 @@ public class StringCalculatorTest {
 		
 	@Test
 	public final void whenDelimiterOfUnspecifiedLengthIsUsedThenItIsUsedToSeparateNumbers() {
-		Assert.assertEquals(6, StringCalculator.add("//[|||]\\n1|||2|||3"));
+		Assert.assertEquals(6, StringCalculator.add("//[|||]\n1|||2|||3"));
 	}
 
 }

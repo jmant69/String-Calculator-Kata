@@ -12,8 +12,8 @@ public class StringCalculator {
 			int delimiterIndex = numbers.indexOf("[");
 			int delimiterEndIndex = numbers.indexOf("]") + 1;
 			delimiter = numbers.substring(delimiterIndex, delimiterEndIndex);
-			int indexOfN = numbers.indexOf("\\n");
-			numbersWithoutDelimiter = numbers.substring(indexOfN + 2);
+			int indexOfN = numbers.indexOf("\n");
+			numbersWithoutDelimiter = numbers.substring(indexOfN + 1);
 		}
 		return add(numbersWithoutDelimiter, delimiter);
 	}
