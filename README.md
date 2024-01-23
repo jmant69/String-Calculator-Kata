@@ -10,3 +10,8 @@ This kata is designed to help you learn test-first coding and refactoring. To th
 # Commit 2 - Amend to allow an unknown number of numbers in the input string.
 
 # Commit 3 - Allow the Add method to handle new lines between numbers (as well as commas).
+
+# Commit 4 - remove bin folders
+
+# Commit 5 - Allow the Add method to handle a different delimiter
+

@@ -41,5 +41,10 @@ public class StringCalculatorTest {
 	public final void whenNewLineIsUsedBetweenNumbersThenReturnValueIsTheirSum() {
 		Assert.assertEquals(14, StringCalculator.add("2,4\n8"));
 	}
+	
+	@Test
+	public final void whenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers() {
+		Assert.assertEquals(14, StringCalculator.add("//;\n2;4;8"));
+	}
 
 }
