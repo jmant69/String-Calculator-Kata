@@ -44,7 +44,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public final void whenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers() {
-		Assert.assertEquals(14, StringCalculator.add("//;\n2;4;8"));
+		Assert.assertEquals(14, StringCalculator.add("//[;]\\n2;4;8")); // Amended to new syntax
 	}
 	
 	@Test(expected = RuntimeException.class)
@@ -72,6 +72,11 @@ public class StringCalculatorTest {
 	@Test
 	public final void whenOneOrMoreNumbersAreGreaterThan1000IsUsedThenItIsNotIncludedInSum() {
 		Assert.assertEquals(2, StringCalculator.add("1001,2")); //test greater than the boundary
+	}
+		
+	@Test
+	public final void whenDelimiterOfUnspecifiedLengthIsUsedThenItIsUsedToSeparateNumbers() {
+		Assert.assertEquals(6, StringCalculator.add("//[|||]\\n1|||2|||3"));
 	}
 
 }

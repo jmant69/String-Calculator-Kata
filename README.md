@@ -18,3 +18,5 @@ This kata is designed to help you learn test-first coding and refactoring. To th
 # Commit 6 - Include functionality for negatives not allowed
 
 # Commit 7 - Do not include numbers greater than 1000 in the returned sum
+
+# Commit 8 - Delimiters can be any length

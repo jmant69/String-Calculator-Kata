@@ -9,9 +9,11 @@ public class StringCalculator {
 		String delimiter = ",|\n";
 		String numbersWithoutDelimiter = numbers;
 		if (numbers.startsWith("//")) {
-			int delimiterIndex = numbers.indexOf("//") + 2;
-			delimiter = numbers.substring(delimiterIndex, delimiterIndex + 1);
-			numbersWithoutDelimiter = numbers.substring(numbers.indexOf("\n") + 1);
+			int delimiterIndex = numbers.indexOf("[");
+			int delimiterEndIndex = numbers.indexOf("]") + 1;
+			delimiter = numbers.substring(delimiterIndex, delimiterEndIndex);
+			int indexOfN = numbers.indexOf("\\n");
+			numbersWithoutDelimiter = numbers.substring(indexOfN + 2);
 		}
 		return add(numbersWithoutDelimiter, delimiter);
 	}
