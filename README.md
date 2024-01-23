@@ -15,3 +15,5 @@ This kata is designed to help you learn test-first coding and refactoring. To th
 
 # Commit 5 - Allow the Add method to handle a different delimiter
 
+# Commit 6 - Include functionality for negatives not allowed
+

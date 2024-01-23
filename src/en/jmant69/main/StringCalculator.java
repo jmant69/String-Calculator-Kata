@@ -1,5 +1,8 @@
 package en.jmant69.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 
 	public static int add(final String numbers) {
@@ -14,12 +17,20 @@ public class StringCalculator {
 	}
 	
 	private static int add(final String numbers, final String delimiter) {
-		int sumOfNumbers = 0; //Changed 'sum' to a more meaningful field name
-		String[] numbersArray = numbers.split(delimiter); //Changed to use the delimiter variable
+		int sumOfNumbers = 0;
+		String[] numbersArray = numbers.split(delimiter);
+		List<Integer> negativeNumbers = new ArrayList<Integer>();
 		for (String number : numbersArray) {
-			if (!number.isEmpty()) {
-				sumOfNumbers += Integer.parseInt(number);
+			if (!number.trim().isEmpty()) {
+				int numberInt = Integer.parseInt(number);
+				if (numberInt < 0) {
+					negativeNumbers.add(numberInt);
+				}
+				sumOfNumbers += numberInt;
 			}
+		}
+		if (negativeNumbers.size() > 0) {
+			throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
 		}
 		return sumOfNumbers;		
 	}
