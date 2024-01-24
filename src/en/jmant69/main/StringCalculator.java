@@ -12,7 +12,8 @@ public class StringCalculator {
 			int delimiterIndex = numbers.indexOf("[");
 			int delimiterEndIndex = numbers.indexOf("\n");
 			delimiter = numbers.substring(delimiterIndex, delimiterEndIndex);
-			delimiter = delimiter.replace("][", "");
+			delimiter = delimiter.replace("][", "]+|["); // join the regex delimiters with pipe
+			delimiter = delimiter + '+';  // use the + to avoid creating empty strings in the numbersArray
 			numbersWithoutDelimiter = numbers.substring(delimiterEndIndex + 1);
 		}
 		return add(numbersWithoutDelimiter, delimiter);

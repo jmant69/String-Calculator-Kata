@@ -80,8 +80,18 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public final void whenMultipleDelimitersOfUnspecifiedLengthAreUsedThenTheyAreUsedToSeparateNumbers() {
+	public final void whenDelimiterOfUnspecifiedLengthIsUsedThenEvenOnePipeWillSeparateNumbers() { //This might not be the desired behaviour
+		Assert.assertEquals(6, StringCalculator.add("//[|||]\n1|2||3"));
+	}
+	
+	@Test
+	public final void whenMultipleDelimitersOfsingleCharLengthAreUsedThenTheyAreUsedToSeparateNumbers() {
 		Assert.assertEquals(6, StringCalculator.add("//[|][%]\n1|2%3"));
+	}
+	
+	@Test
+	public final void whenMultipleDelimitersOfUnspecifiedLengthAreUsedThenTheyAreUsedToSeparateNumbers() {
+		Assert.assertEquals(10, StringCalculator.add("//[|$||][%%][*]\n1|$$|2%%3*4"));
 	}
 
 }
